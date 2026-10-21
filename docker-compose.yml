@@ -1,0 +1,10 @@
+services:
+  ir_submissions:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    network_mode: host
+    environment:
+      OUTPUT_DIR: /data
+    volumes:
+      - "./etd_submissions:/data"
